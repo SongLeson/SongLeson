@@ -4,6 +4,8 @@ import MusicWidget from './widgets/MusicWidget.vue'
 import TechSphereWidget from './widgets/TechSphereWidget.vue'
 import GithubCityWidget from './widgets/GithubCityWidget.vue'
 import MapWidget from './widgets/MapWidget.vue'
+import BioDashboardWidget from './widgets/BioDashboardWidget.vue'
+import GearArmoryWidget from './widgets/GearArmoryWidget.vue'
 </script>
 
 <template>
@@ -36,9 +38,14 @@ import MapWidget from './widgets/MapWidget.vue'
           <MapWidget />
         </div>
 
-        <!-- Placeholder for more content -->
-        <div class="col-span-1 row-span-1 bg-white/5 backdrop-blur-xl border border-white/10 rounded-3xl shadow-glass transition-all duration-300 hover:border-white/20 hover:shadow-neon hover:-translate-y-1 flex items-center justify-center">
-          <span class="text-white/50 font-mono">MORE_COMING_SOON...</span>
+        <!-- Bio Dashboard (1x2) -->
+        <div class="col-span-1 row-span-2">
+          <BioDashboardWidget />
+        </div>
+
+        <!-- Gear Armory (1x2) -->
+        <div class="col-span-1 row-span-2">
+          <GearArmoryWidget />
         </div>
 
       </div>

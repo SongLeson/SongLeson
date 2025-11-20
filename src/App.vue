@@ -5,6 +5,7 @@ import ThreeBackground from './components/ThreeBackground.vue'
 import ThePreloader from './components/ThePreloader.vue'
 import TheHero from './components/TheHero.vue'
 import TheBentoGrid from './components/TheBentoGrid.vue'
+import ZenMode from './components/ZenMode.vue'
 
 const isLoaded = ref(false)
 
@@ -17,6 +18,7 @@ const onLoaded = () => {
   <ThePreloader @loaded="onLoaded" />
   <TheCursor />
   <ThreeBackground />
+  <ZenMode />
   
   <main v-show="isLoaded" class="relative z-10 min-h-screen">
     <div class="container mx-auto px-4">
