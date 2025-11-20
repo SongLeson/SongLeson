@@ -1,0 +1,71 @@
+@import "tailwindcss";
+
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;700;900&family=Fira+Code:wght@400;600&display=swap');
+
+:root {
+  --cursor-size: 20px;
+  --color-deep-black: #000000;
+  --color-neon-lime: #ccff00;
+  --color-electric-violet: #8b5cf6;
+  --color-holographic-blue: #00d4ff;
+}
+
+@theme {
+  --color-deep-black: var(--color-deep-black);
+  --color-neon-lime: var(--color-neon-lime);
+  --color-electric-violet: var(--color-electric-violet);
+  --color-holographic-blue: var(--color-holographic-blue);
+  
+  --font-sans: 'Outfit', sans-serif;
+  --font-mono: 'Fira Code', monospace;
+  
+  --shadow-glass: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  --shadow-neon: 0 0 10px rgba(204, 255, 0, 0.5), 0 0 20px rgba(204, 255, 0, 0.3);
+  
+  --image-noise: url('/noise.png');
+}
+
+@layer components {
+  .glass-panel {
+    @apply bg-white/5 backdrop-blur-xl border border-white/10 rounded-3xl shadow-glass transition-all duration-300;
+  }
+  .glass-panel:hover {
+    @apply border-white/20 shadow-neon transform -translate-y-1;
+  }
+}
+
+body {
+  @apply bg-deep-black text-white font-sans overflow-x-hidden;
+  cursor: none; /* Custom cursor */
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  @apply bg-black;
+}
+::-webkit-scrollbar-thumb {
+  @apply bg-white/20 rounded-full;
+}
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-neon-lime;
+}
+
+/* Lenis Smooth Scroll */
+html.lenis {
+  height: auto;
+}
+.lenis.lenis-smooth {
+  scroll-behavior: auto;
+}
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+.lenis.lenis-scrolling iframe {
+  pointer-events: none;
+}
